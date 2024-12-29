@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('Images/bg-01.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        #login {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #f2f2f2;
+        }
+
+        p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            font-size: 16px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        a#button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        a#button:hover {
+            background-color: #0056b3;
+        }
+
+        .or-text {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        #logos {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .fb, .google {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48%;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .fb img, .google img {
+            margin-right: 10px;
+        }
+
+        .fb:hover {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .google:hover {
+            background-color: #db4437;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login">
+        <h2>Sign In</h2>
+
+        <form>
+            <p>Username</p>
+            <input type="text" id="email" placeholder="Enter your email">
+
+            <p>Password</p>
+            <input type="password" id="pswd" placeholder="Enter your password">
+
+            <a href="index.html" onclick="return validate()" id="button">Sign In</a>
+
+            <p class="or-text">OR</p>
+
+            <div id="logos">
+                <!-- Facebook Login Link -->
+                <a href="https://www.facebook.com/login" class="fb" target="_blank">
+                    <img src="D:\TravelProjects\Project2\travel-and-tourism-website-HTML-and-CSS-project\Images\facebook.jpeg" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+
+                <!-- Google Login Link -->
+                <a href="https://accounts.google.com/signin" class="google" target="_blank">
+                    <img src="D:\TravelProjects\Project2\travel-and-tourism-website-HTML-and-CSS-project\Images\google-square-768x768.png" alt="Google">
+                    <span>Google</span>
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            email = document.getElementById('email').value;
+            pswd = document.getElementById('pswd').value;
+            validEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (email == '') {
+                alert('Please enter your email.');
+                return false;
+            } else if (validEmail.test(email) == false) {
+                alert('Please enter your email correctly');
+                return false;
+            } else if (pswd == '') {
+                alert('Please enter password.');
+                return false;
+            } else
+                return true;
+        }
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</body>
+</html>
